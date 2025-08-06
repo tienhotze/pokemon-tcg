@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardContainer, CardImage, CardInfo, AddButton } from './Card.styles';
+import { CardContainer, CardInfo, AddButton } from './Card.styles';
 
 const Card = ({ cardData, isCollected, onToggle }) => {
   if (!cardData) {
@@ -10,17 +10,23 @@ const Card = ({ cardData, isCollected, onToggle }) => {
     );
   }
 
-  const { name, number, rarity, images } = cardData;
+  const { name, number, rarity } = cardData;
 
   return (
     <CardContainer>
-      <CardImage src={`/images/${encodeURIComponent(images.small)}`} alt={name} />
+      {cardData.images && cardData.images.small && (
+        <img 
+          src={`/${cardData.images.small}`} 
+          alt={name} 
+          style={{ width: '100%', maxHeight: '200px', objectFit: 'contain' }}
+        />
+      )}
       <CardInfo>
-        <p>{name} {number}</p>
-        <p>{rarity}</p>
+        <h3>{name}</h3>
+        <p>#{number} | {rarity}</p>
       </CardInfo>
       <AddButton onClick={() => onToggle(cardData.id)}>
-        {isCollected ? '✓ Added' : '+ Add to Collection'}
+        {isCollected ? '✓ Collected' : '+ Add to Collection'}
       </AddButton>
     </CardContainer>
   );
