@@ -1,0 +1,9 @@
+[build]
+  base = "pokemon-tcg-collector"
+  command = "npm run build"
+  publish = "pokemon-tcg-collector/build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
