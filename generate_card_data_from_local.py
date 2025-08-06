@@ -21,7 +21,7 @@ def generate_card_data():
             continue # Skip if we've already processed this card name
 
         # Extract number from filename
-        number_match = re.search(r'\#(\d+)', filename)
+        number_match = re.search(r'__(\d+)', filename)
         number = number_match.group(1) if number_match else 'N/A'
         
         card_id = f"base1-{number}"
