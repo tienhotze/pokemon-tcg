@@ -58,8 +58,8 @@ def generate_card_data():
             "nationalPokedexNumbers": [], # Placeholder
             "legalities": { "unlimited": "Legal" },
             "images": {
-                "small": f"/images/pokemon_base_set/{filename}",
-                "large": f"/images/pokemon_base_set/{filename.replace('_thumb', '_large')}"
+                "small": f"images/pokemon_base_set/{filename}",
+                "large": f"images/pokemon_base_set/{filename.replace('_thumb', '_large')}"
             },
             "tcgplayer": {}, # Placeholder
             "cardmarket": {} # Placeholder
